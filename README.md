@@ -193,9 +193,9 @@ variance being reported.
 @inproceedings{muniz2026alignment,
   title     = {Alignment-Free Viral Metagenomics: External Validation of K-mer
                Based Ensemble Classifiers on an Independent Amazonian Dataset},
-  author    = {Muniz, Hiago D. and Corr{\^e}a, Ulisses B. and
-               de Almeida, Jo{\~a}o Paulo P. and
-               Silveira J{\'u}nior, Carlos Augusto Calage},
+  author    = {Muniz, Hiago D. and de Almeida, Jo{\~a}o Paulo P. and
+               Silveira J{\'u}nior, Carlos Augusto Calage and
+               Corr{\^e}a, Ulisses B.},
   booktitle = {Anais do Encontro Nacional de Intelig{\^e}ncia Artificial e
                Computacional (ENIAC)},
   year      = {2026}

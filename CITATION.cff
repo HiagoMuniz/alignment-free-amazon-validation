@@ -4,12 +4,12 @@ title: "Alignment-Free Viral Metagenomics: External Validation of K-mer Based En
 authors:
   - family-names: "Muniz"
     given-names: "Hiago D."
-  - family-names: "Corrêa"
-    given-names: "Ulisses B."
   - family-names: "de Almeida"
     given-names: "João Paulo P."
   - family-names: "Silveira Júnior"
     given-names: "Carlos Augusto Calage"
+  - family-names: "Corrêa"
+    given-names: "Ulisses B."
 license: MIT
 preferred-citation:
   type: conference-paper
@@ -17,11 +17,11 @@ preferred-citation:
   authors:
     - family-names: "Muniz"
       given-names: "Hiago D."
-    - family-names: "Corrêa"
-      given-names: "Ulisses B."
     - family-names: "de Almeida"
       given-names: "João Paulo P."
     - family-names: "Silveira Júnior"
       given-names: "Carlos Augusto Calage"
+    - family-names: "Corrêa"
+      given-names: "Ulisses B."
   collection-title: "Anais do Encontro Nacional de Inteligência Artificial e Computacional (ENIAC)"
   year: 2026
