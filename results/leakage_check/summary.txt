@@ -1,0 +1,13 @@
+Leakage check: the 82 Amazonian viruses against the ZOVER viral training set.
+MMseqs2 easy-search, nucleotide mode. The honest metric is query coverage.
+
+Viruses with any alignment:        27/82
+With query coverage >= 30%:         4/82
+With query coverage >= 50%:         4/82
+Highest identity among hits with query coverage >= 50%:  72.0%
+Highest identity among all hits, at minimal coverage:    89.1%
+
+Conclusion: no near-duplicate. The highest-coverage match is about 72%
+identity over up to 86% of the query length, in 4 sequences of the PV3352xx
+group. That is divergent homology, not duplication (which would be above 95%).
+No leakage.

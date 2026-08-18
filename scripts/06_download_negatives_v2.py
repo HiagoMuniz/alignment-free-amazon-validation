@@ -1,23 +1,26 @@
 #!/usr/bin/env python3
 """
-Baixa um pool DIVERSO e NAO-REDUNDANTE de transcritos reais do NCBI para
-servir de classe negativa de validacao (caminho B, v2).
+Downloads a diverse, non-redundant pool of real host transcripts from NCBI to
+serve as the negative class of the validation set.
 
-Diferenca crucial vs a v1 (8200 falhos): cada negativo e UM transcrito
-real distinto, usado UMA vez. Sem fatiamento, sem sobreposicao. E sao
-TRANSCRITOS (mRNA/rRNA/genes), casando o tipo molecular dos virus de RNA
-do estudo (metatranscriptomica).
+Each negative is one distinct transcript, used exactly once, with no
+fragmentation and no overlap. They are transcripts (mRNA, rRNA and genes),
+which matches the molecule type of the RNA viruses of the reference study.
 
-Cada sequencia recebe um rotulo de componente no header, para permitir
-reponderar a composicao depois sem novo download.
+Every sequence carries a component label in its header, so that the
+composition can be reweighted later without downloading again.
 
-Saida:
-  data/negatives_v2/<componente>.fasta  (um por componente)
-  data/amazon_negatives_v2.fasta         (combinado)
-  data/amazon_negatives_v2_metadata.csv  (accession, componente, comprimento)
+Note that the components are queried by organism, not by accession, so a fresh
+download will not return exactly the set used in the paper as the database
+grows. The authoritative list is data/amazon_negatives_v2_metadata.csv.
 
-Uso:
-  python3 06_download_negatives_v2.py --email SEU_EMAIL
+Output:
+  data/negatives_v2/<component>.fasta   one file per component
+  data/amazon_negatives_v2.fasta        combined
+  data/amazon_negatives_v2_metadata.csv accession, component, length
+
+Usage:
+  python3 scripts/06_download_negatives_v2.py --email YOUR_EMAIL
 """
 
 import argparse
@@ -33,7 +36,7 @@ OUTDIR.mkdir(parents=True, exist_ok=True)
 COMBINED = ROOT / "data" / "amazon_negatives_v2.fasta"
 META = ROOT / "data" / "amazon_negatives_v2_metadata.csv"
 
-# componente -> (query, alvo de sequencias)
+# component -> (query, target number of sequences)
 COMPONENTS = {
     "Anopheles_darlingi_mRNA": ('"Anopheles darlingi"[Organism] AND biomol_mrna[PROP]', 3000),
     "Anopheles_genus_mRNA":    ('"Anopheles"[Organism] AND biomol_mrna[PROP] AND refseq[filter]', 1500),
@@ -47,15 +50,15 @@ BATCH = 300
 
 
 def fetch_component(name, query, target):
-    print(f"\n[{name}] esearch (alvo {target})...", flush=True)
+    print(f"\n[{name}] esearch (target {target})...", flush=True)
     h = Entrez.esearch(db="nucleotide", term=query, retmax=target)
     r = Entrez.read(h); h.close()
     ids = r["IdList"]
-    print(f"[{name}] {len(ids)} ids obtidos (de {r['Count']} disponiveis)", flush=True)
+    print(f"[{name}] {len(ids)} ids retrieved (of {r["Count"]} available)", flush=True)
     if not ids:
         return []
 
-    # epost para baixar em lotes
+    # epost, to download in batches
     post = Entrez.read(Entrez.epost(db="nucleotide", id=",".join(ids)))
     webenv, qkey = post["WebEnv"], post["QueryKey"]
 
@@ -94,7 +97,7 @@ def main():
             meta_rows.append({"accession": rec.id, "component": name,
                               "length_bp": len(rec.seq)})
 
-    # dedup por accession (caso haja overlap entre queries)
+    # deduplicate by accession, in case queries overlap
     seen = set(); uniq = []
     for rec, row in zip(all_recs, meta_rows):
         if rec.id in seen:
@@ -104,12 +107,12 @@ def main():
     SeqIO.write(recs_u, str(COMBINED), "fasta")
     pd.DataFrame([u[1] for u in uniq]).to_csv(META, index=False)
 
-    print(f"\n[OK] {len(recs_u)} transcritos distintos salvos em {COMBINED}")
+    print(f"\n[OK] {len(recs_u)} distinct transcripts written to {COMBINED}")
     df = pd.DataFrame([u[1] for u in uniq])
-    print("\nComposicao final:")
+    print("\nFinal composition:")
     print(df.groupby("component").agg(n=("accession","size"),
           comp_medio=("length_bp","mean")).round(0).to_string())
-    print(f"\nComprimento: min={df.length_bp.min()} max={df.length_bp.max()} "
+    print(f"\nLength: min={df.length_bp.min()} max={df.length_bp.max()} "
           f"mediana={int(df.length_bp.median())}")
 
 

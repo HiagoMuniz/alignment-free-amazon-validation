@@ -40,8 +40,10 @@ of the 20 runs of each proposed model and each external tool found no
 significant difference in any of the 6 pairs (0 of 20 runs below α = 0.05,
 median p between 0.24 and 1.00). The proposed classifiers trail the annotation
 tools in specificity but run on CPU in about 15 seconds for the full set of
-7,624 sequences, against 2.5 to 56 minutes for the external tools, with no
-protein database required.
+7,624 sequences, against 3 to 49 minutes for the reference tools, with no
+marker-gene database required. Versions, exact command lines, decision
+criteria and timings for the three tools are in
+[`external_tools/README.md`](external_tools/README.md).
 
 Sensitivity is uneven across families: *Phasmaviridae*, *Rhabdoviridae*,
 *Phenuiviridae*, *Xinmoviridae* and *Peribunyaviridae* are recovered almost
@@ -62,6 +64,7 @@ sporadically. Per-family numbers are in `results/all_metrics_n20.json`.
 ├── results/                               # every number reported in the paper
 │   └── leakage_check/                     # MMseqs2 search of the 82 viruses against the training set
 └── external_tools/
+    ├── README.md                          # tool versions, command lines, decision criteria, timings
     ├── amazon82/                          # raw geNomad, VirSorter2 and DeepVirFinder output on the 82 viruses
     └── negatives/                         # the same three tools on the 7,542 host transcripts
 ```
@@ -125,8 +128,7 @@ Scripts are anchored to the repository root and can be run from anywhere.
 | `10_leakage_check.sh` | MMseqs2 search of the 82 viruses against the ZOVER training set | `results/leakage_check/` | Section 3.1 |
 | `05b_embedding_variance_v2.py` | Embedding stochasticity, XGBoost with Word2Vec | `results/embedding_variance_v2.csv` | Section 5 |
 | `05c_embedding_variance_extratrees.py` | Embedding stochasticity, ExtraTrees with fastText | `results/embedding_variance_extratrees.csv` | Section 5 |
-| `08_roc_curve.py` | Illustrative ROC and precision-recall curve, single embedding | `results/roc_pr_curve_ilustrativa.png` | not in the paper |
-| `09_full_metrics.py` | Earlier 10-embedding version of script 11 | `results/full_metrics.json` | superseded by 11 |
+| `08_roc_curve.py` | Illustrative ROC and precision-recall curve, single embedding | `results/roc_pr_curve_illustrative.png` | not in the paper |
 | `02_train_classifiers.py` | Retrains the two classifiers on the 80 % ZOVER pool | `models/*.joblib` | single-run path |
 | `03_predict_amazon.py` | Single-model inference over the 82 viruses | `results/amazon_predictions.csv` | single-run path |
 

@@ -1,0 +1,10 @@
+Recall with and without the 4 sequences that have a divergent homolog
+(about 72% identity) in the training set: PV335200 to PV335203, all
+Flaviviridae. Single representative embedding, from results/amazon_predictions.csv.
+
+With the 4 (n=82):     XGBoost 67/82 = 81.7%   ExtraTrees 68/82 = 82.9%
+Without the 4 (n=78):  XGBoost 63/78 = 80.8%   ExtraTrees 66/78 = 84.6%
+
+Conclusion: removing the 4 does not raise recall (XGBoost drops by under 1
+percentage point, ExtraTrees rises by about 1.7). Performance is not sustained
+by semi-in-distribution sequences.

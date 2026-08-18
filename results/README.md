@@ -10,13 +10,11 @@
 | `embedding_variance_extratrees.csv` | `05c_embedding_variance_extratrees.py` | The same for ExtraTrees with fastText |
 | `leakage_check/` | `10_leakage_check.sh` | MMseqs2 nucleotide search of the 82 Amazonian viruses against the ZOVER training set |
 | `amazon_predictions.csv`, `amazon_summary.csv` | `03_predict_amazon.py` | Per-sequence probabilities and predictions of the single-run inference path |
-| `full_metrics.json` | `09_full_metrics.py` | Earlier 10-embedding version of `all_metrics_n20.json`, superseded |
-| `full_comparison_final.csv`, `full_comparison_v2_transcripts.csv` | intermediate | Comparison tables assembled from the `embedding_variance_*` runs, superseded by `all_metrics_n20.json` |
 
 ## Why some numbers differ slightly between files
 
-The `embedding_variance_*.csv` files and the comparison tables derived from them
-come from an earlier set of 20 embedding repetitions. `all_metrics_n20.json`
+The `embedding_variance_*.csv` files come from an earlier set of 20 embedding
+repetitions. `all_metrics_n20.json`
 comes from a later set in which both models and all metrics were computed over
 the very same 20 runs, for internal consistency, and that is the set reported in
 the paper.
@@ -28,11 +26,10 @@ embedding stochasticity the paper describes, not a discrepancy between methods.
 
 ## Leakage check
 
-`leakage_check/RESUMO.txt` is in Portuguese. In summary: of the 82 Amazonian
-viruses, 27 produce some alignment against the ZOVER training set, 4 reach at
+`leakage_check/summary.txt` records it in full. Of the 82 Amazonian viruses, 27 produce some alignment against the ZOVER training set, 4 reach at
 least 30 % query coverage, and the strongest of those is 72.0 % identity over up
 to 86 % of the query length. The highest identity of any hit, at minimal
 coverage, is 89.1 %. No sequence approaches near-duplicate status, so the
 out-of-distribution evaluation is not contaminated by the training set.
-`B8_leave_out_homologs.txt` records the sanity check that removes even those
+`leave_out_homologs.txt` records the sanity check that removes even those
 homologs and recomputes recall.

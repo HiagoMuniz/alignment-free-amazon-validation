@@ -1,6 +1,0 @@
-metodo,recall,recall_sd,espec,espec_sd,f1_1to8,f1_1to100
-XGBoost (proposto),0.8152,0.0232,0.8763,0.0083,0.5813,0.1149
-ExtraTrees (proposto),0.8555,0.0182,0.8823,0.0104,0.6117,0.1255
-geNomad,0.89,,0.973,,0.8452,0.3878
-DeepVirFinder,0.854,,0.796,,0.49,0.0768
-VirSorter2,0.817,,0.972,,0.8006,0.3539

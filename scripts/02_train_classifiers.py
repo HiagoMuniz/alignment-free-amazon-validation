@@ -1,18 +1,17 @@
 #!/usr/bin/env python3
 """
-Retreina os 2 melhores classifiers do paper BRACIS (XGBoost k=6 word2vec,
-ExtraTrees k=6 fast_text) no pool de 80% do ZOVER (split com seed=42).
+Retrains the two best classical classifiers of the prior work (XGBoost with
+Word2Vec k=6, ExtraTrees with fastText k=6) on the 80% ZOVER pool, using the
+stratified split with seed 42.
 
-Os hiperparametros sao os escolhidos pelo GridSearchCV no script 07
-(reportados na Tabela 1 do paper BRACIS):
+Hyperparameters are the ones selected by grid search in the prior work:
 - XGBoost: n_estimators=300, max_depth=5, learning_rate=0.1, subsample=0.8
 - ExtraTrees: n_estimators=200, max_depth=10, min_samples_split=2
 
-Embedding e carregado de paper_bracis/embeddings_test_full80/ (treinado
-no 80% durante a execucao do script 07 do paper BRACIS).
-
-Os classifiers sao salvos como .joblib em models/ para uso
-pela inferencia (script 03).
+The embeddings are loaded from the directory given by EMB_DIR, which holds the
+embeddings trained on the same 80% pool in the prior work and is not
+distributed with this repository. This single-run path is not the source of any
+number in the paper; see scripts 11 and 12.
 """
 
 import sys

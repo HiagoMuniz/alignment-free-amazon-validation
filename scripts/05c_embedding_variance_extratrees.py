@@ -1,9 +1,11 @@
 #!/usr/bin/env python3
 """
-Variancia do embedding para o ExtraTrees (fastText, k=6) — espelho do
-05b mas com fastText (embedding do ExtraTrees no BRACIS) e classificador
-ExtraTrees. 20 rodadas: F1 in-dist, recall OOD (82 virus), especificidade
-OOD (7542 transcritos v2).
+Embedding stochasticity for ExtraTrees with fastText, k=6. Mirrors script 05b,
+which covers XGBoost with Word2Vec. For each of N repetitions it measures
+in-distribution F1, out-of-distribution recall over the 82 Amazonian viruses
+and out-of-distribution specificity over the 7,542 host transcripts.
+
+Output: results/embedding_variance_extratrees.csv, one row per repetition.
 """
 import argparse, time
 import os
@@ -53,7 +55,7 @@ def main():
         print(f"  run {run:2d}/{a.n}: F1id={f1id:.4f} recall_OOD={rec:.4f} spec_OOD={spec:.4f} ({time.time()-t0:.0f}s)",flush=True)
         pd.DataFrame(rows).to_csv(E/"results/embedding_variance_extratrees.csv",index=False)
     df=pd.DataFrame(rows)
-    print("\n=== RESUMO ExtraTrees (fastText) ===")
-    for c,n in [("f1_indist","F1 in-dist"),("recall_ood","Recall OOD"),("specificity_ood","Espec OOD")]:
-        print(f"  {n:14s}: media={df[c].mean():.4f} std={df[c].std():.4f} min={df[c].min():.4f} max={df[c].max():.4f}")
+    print("\n=== SUMMARY, ExtraTrees with fastText ===")
+    for c,n in [("f1_indist","F1 in-dist"),("recall_ood","Recall OOD"),("specificity_ood","Specificity OOD")]:
+        print(f"  {n:14s}: mean={df[c].mean():.4f} std={df[c].std():.4f} min={df[c].min():.4f} max={df[c].max():.4f}")
 if __name__=="__main__": main()

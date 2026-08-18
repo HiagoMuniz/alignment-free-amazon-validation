@@ -1,13 +1,16 @@
 #!/usr/bin/env python3
 """
-Roda inferencia dos 2 classificadores treinados em ZOVER sobre as 82
-sequencias virais do Amazon Mosquito Viroma (Fuques et al. 2026).
+Runs inference with the two ZOVER-trained classifiers over the 82 Amazonian
+viral sequences of Fuques et al. 2026.
 
-Saidas:
-- results/amazon_predictions.csv: uma linha por sequencia com colunas
+Outputs:
+- results/amazon_predictions.csv: one row per sequence, with columns
   accession, species, family, novel, length_bp,
   xgb_proba, xgb_pred, et_proba, et_pred, agree
-- results/amazon_summary.csv: agregados por familia e por modelo
+- results/amazon_summary.csv: aggregates by family and by model
+
+Requires the classifiers and embeddings produced by script 02, which are not
+distributed with this repository.
 """
 
 import sys
@@ -117,13 +120,13 @@ def main() -> int:
     print(f"  summary by family: {summary_csv}", flush=True)
 
     # Print overall
-    print(f"\n=== Recall global (threshold={THRESHOLD}) ===")
+    print(f"\n=== Overall recall (threshold={THRESHOLD}) ===")
     for model in ("XGB", "ET"):
         global_row = summary[(summary["model"] == model) & (summary["family"] == "ALL")].iloc[0]
         print(f"  {model}: {int(global_row['detected_viral'])}/{int(global_row['n'])} "
               f"({global_row['recall']:.1%}), mean_proba={global_row['mean_proba']:.3f}")
 
-    print(f"\n=== Recall por familia ===")
+    print(f"\n=== Recall by family ===")
     for fam, sub in out.groupby("family"):
         xgb_n = int(sub["xgb_pred"].sum())
         et_n = int(sub["et_pred"].sum())

@@ -1,16 +1,16 @@
-=== RECALL com IC de Wilson 95% (n=82 positivos) ===
-  DeepVirFinder   : 70/82 = 85.4%  IC95% [76.1%, 91.4%]
-  VirSorter2      : 67/82 = 81.7%  IC95% [72.0%, 88.6%]
-  geNomad         : 73/82 = 89.0%  IC95% [80.4%, 94.1%]
-  XGBoost (20 emb): 81.5% +/- 2.3%  (faixa 78.0%-85.4%)
+=== RECALL with 95% Wilson CI (n=82 positives) ===
+  DeepVirFinder   : 70/82 = 85.4%  95% CI [76.1%, 91.4%]
+  VirSorter2      : 67/82 = 81.7%  95% CI [72.0%, 88.6%]
+  geNomad         : 73/82 = 89.0%  95% CI [80.4%, 94.1%]
+  XGBoost (20 emb): 81.5% +/- 2.3%  (range 78.0%-85.4%)
 
-=== McNemar pareado entre ferramentas externas (positivos) ===
-  DeepVirFinder vs VirSorter2: discordam DeepVirFinder+:11 VirSorter2+:8  p=0.648  signif=nao
-  DeepVirFinder vs geNomad: discordam DeepVirFinder+:7 geNomad+:10  p=0.629  signif=nao
-  VirSorter2 vs geNomad: discordam VirSorter2+:0 geNomad+:6  p=0.031  signif=SIM
+=== Paired McNemar among the reference tools, on the positives ===
+  DeepVirFinder vs VirSorter2: discordant DeepVirFinder+:11 VirSorter2+:8  p=0.648  significant=no
+  DeepVirFinder vs geNomad: discordant DeepVirFinder+:7 geNomad+:10  p=0.629  significant=no
+  VirSorter2 vs geNomad: discordant VirSorter2+:0 geNomad+:6  p=0.031  significant=yes
 
-=== ESPECIFICIDADE com IC Wilson 95% (n=7542 negativos transcritos) ===
-  DeepVirFinder   : 6005/7542 = 79.6%  IC95% [78.7%, 80.5%]  (FP=1537)
-  VirSorter2      : 7329/7542 = 97.2%  IC95% [96.8%, 97.5%]  (FP=213)
-  geNomad         : 7335/7542 = 97.3%  IC95% [96.9%, 97.6%]  (FP=207)
+=== SPECIFICITY with 95% Wilson CI (n=7,542 host transcripts) ===
+  DeepVirFinder   : 6005/7542 = 79.6%  95% CI [78.7%, 80.5%]  (FP=1537)
+  VirSorter2      : 7329/7542 = 97.2%  95% CI [96.8%, 97.5%]  (FP=213)
+  geNomad         : 7335/7542 = 97.3%  95% CI [96.9%, 97.6%]  (FP=207)
   XGBoost (20 emb): 87.6% +/- 0.8%

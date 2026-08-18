@@ -1,3 +1,10 @@
+#!/usr/bin/env python3
+"""
+Wilson 95% confidence intervals and paired McNemar tests for the three
+reference tools, over the 82 Amazonian viruses and the 7,542 host
+transcripts. Reads only the committed raw tool outputs, so it runs in
+seconds and needs no retraining.
+"""
 import pandas as pd, numpy as np
 from pathlib import Path
 from statsmodels.stats.proportion import proportion_confint
@@ -7,12 +14,12 @@ ROOT = Path(__file__).resolve().parents[1]
 RW = ROOT / "external_tools"
 def acc(s): return str(s).split('|')[0].split()[0].split('.')[0]
 
-# accessions dos 82 positivos
+# accessions of the 82 positives
 pos_acc = [acc(l[1:].split()[0]) for l in open(ROOT/"data/amazon_viruses.fasta") if l.startswith(">")]
 pos_acc = list(dict.fromkeys(pos_acc))
 N=len(pos_acc)
 
-# --- predicoes por metodo nos positivos (1=viral) ---
+# --- per-method predictions on the positives, 1 = viral ---
 dvf=pd.read_csv(RW/"amazon82/dvf_amazon82.txt",sep="\t")
 dvf['a']=dvf['name'].map(acc); dvf_set=set(dvf[(dvf.score>=0.5)&(dvf.pvalue<0.05)]['a'])
 vs2=pd.read_csv(RW/"amazon82/vs2_amazon82.tsv",sep="\t"); vs2_set=set(vs2['seqname'].map(acc))
@@ -21,17 +28,17 @@ gen=pd.read_csv(RW/"amazon82/genomad_amazon82.tsv",sep="\t"); gen_set=set(gen['s
 methods={"DeepVirFinder":dvf_set,"VirSorter2":vs2_set,"geNomad":gen_set}
 pred={m:np.array([1 if a in s else 0 for a in pos_acc]) for m,s in methods.items()}
 
-print("=== RECALL com IC de Wilson 95% (n=82 positivos) ===")
+print("=== RECALL with 95% Wilson CI (n=82 positives) ===")
 for m,s in methods.items():
     tp=sum(1 for a in pos_acc if a in s)
     lo,hi=proportion_confint(tp,N,method="wilson")
-    print(f"  {m:16s}: {tp}/{N} = {tp/N:.1%}  IC95% [{lo:.1%}, {hi:.1%}]")
-# classico: media+-std de 20 embeddings
+    print(f"  {m:16s}: {tp}/{N} = {tp/N:.1%}  95% CI [{lo:.1%}, {hi:.1%}]")
+# proposed classifier: mean +- sd over 20 embeddings
 ev=pd.read_csv(ROOT/"results/embedding_variance_v2.csv")
 m_=ev.recall_ood.mean(); s_=ev.recall_ood.std()
-print(f"  {'XGBoost (20 emb)':16s}: {m_:.1%} +/- {s_:.1%}  (faixa {ev.recall_ood.min():.1%}-{ev.recall_ood.max():.1%})")
+print(f"  {'XGBoost (20 emb)':16s}: {m_:.1%} +/- {s_:.1%}  (range {ev.recall_ood.min():.1%}-{ev.recall_ood.max():.1%})")
 
-print("\n=== McNemar pareado entre ferramentas externas (positivos) ===")
+print("\n=== Paired McNemar among the reference tools, on the positives ===")
 names=list(methods)
 for i in range(len(names)):
     for j in range(i+1,len(names)):
@@ -39,11 +46,11 @@ for i in range(len(names)):
         n01=int(np.sum((pred[a]==0)&(pred[b]==1))); n10=int(np.sum((pred[a]==1)&(pred[b]==0)))
         tb=[[0,n01],[n10,0]]
         p=mcnemar(tb,exact=True).pvalue
-        sig="SIM" if p<0.05 else "nao"
-        print(f"  {a} vs {b}: discordam {a}+:{n10} {b}+:{n01}  p={p:.3f}  signif={sig}")
+        sig="yes" if p<0.05 else "no"
+        print(f"  {a} vs {b}: discordant {a}+:{n10} {b}+:{n01}  p={p:.3f}  significant={sig}")
 
-# --- especificidade nos 7542 negativos v2 ---
-print("\n=== ESPECIFICIDADE com IC Wilson 95% (n=7542 negativos transcritos) ===")
+# --- specificity over the 7,542 host transcripts ---
+print("\n=== SPECIFICITY with 95% Wilson CI (n=7,542 host transcripts) ===")
 NEG=7542
 dvfn=pd.read_csv(RW/"negatives/dvf_negv2.txt",sep="\t")
 dvf_fp=int(((dvfn.score>=0.5)&(dvfn.pvalue<0.05)).sum())
@@ -52,6 +59,6 @@ genn=RW/"negatives/genomad_negv2.tsv"
 genn=pd.read_csv(genn,sep="\t"); gen_fp=genn['seq_name'].map(acc).nunique() if len(genn) else 0
 for m,fp in [("DeepVirFinder",dvf_fp),("VirSorter2",vs2_fp),("geNomad",gen_fp)]:
     tn=NEG-fp; lo,hi=proportion_confint(tn,NEG,method="wilson")
-    print(f"  {m:16s}: {tn}/{NEG} = {tn/NEG:.1%}  IC95% [{lo:.1%}, {hi:.1%}]  (FP={fp})")
+    print(f"  {m:16s}: {tn}/{NEG} = {tn/NEG:.1%}  95% CI [{lo:.1%}, {hi:.1%}]  (FP={fp})")
 m_=ev.specificity_ood.mean(); s_=ev.specificity_ood.std()
 print(f"  {'XGBoost (20 emb)':16s}: {m_:.1%} +/- {s_:.1%}")

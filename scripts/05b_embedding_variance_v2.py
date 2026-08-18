@@ -1,23 +1,18 @@
 #!/usr/bin/env python3
 """
-Quantifica a variancia do desempenho causada pela estocasticidade do
-embedding Word2Vec (gensim sem seed fixa, workers default).
+Quantifies the performance variance caused by the stochasticity of Word2Vec
+embedding training (gensim with default workers and no fixed seed).
 
-Para N rodadas independentes:
-  1. treina Word2Vec fresco no pool de 80% do ZOVER (k=6)
-  2. treina XGBoost (mesmos hiperparametros do paper) sobre esse embedding
-  3. mede:
-     - F1 in-distribution no test set 20% do ZOVER
-     - Recall OOD nos 82 virus amazonicos
-     - Especificidade OOD nos 7542 transcritos de hospedeiro (classe negativa v2)
+For each of N repetitions:
+  1. train a fresh Word2Vec embedding on the 80% ZOVER pool (k=6)
+  2. train XGBoost with the paper hyperparameters over that embedding
+  3. measure
+     - in-distribution F1 on the 20% ZOVER test split
+     - out-of-distribution recall on the 82 Amazonian viruses
+     - out-of-distribution specificity on the 7,542 host transcripts
 
-Hipotese: F1 in-distribution e estavel entre rodadas, mas o recall OOD
-oscila (foi o que vimos: 67/82 vs 81/82 em duas rodadas distintas).
-
-Saida: results/embedding_variance_v2.csv (uma linha por rodada) + resumo.
-
-Uso:
-    python3 05_embedding_variance.py --n 20
+Output: results/embedding_variance_v2.csv, one row per repetition, plus a
+summary printed at the end.
 """
 
 import argparse
@@ -41,7 +36,7 @@ AMAZON_POS = ENIAC / "data/amazon_viruses.fasta"
 AMAZON_NEG = ENIAC / "data/amazon_negatives_v2.fasta"
 
 K = 6
-SEED_SPLIT = 42  # split fixo, igual ao BRACIS, para todas as rodadas
+SEED_SPLIT = 42  # fixed split, the same one for every repetition
 
 
 def kmers(seq):
@@ -60,15 +55,15 @@ def mean_vec(seq, model):
 
 def main():
     ap = argparse.ArgumentParser()
-    ap.add_argument("--n", type=int, default=20, help="numero de rodadas de embedding")
+    ap.add_argument("--n", type=int, default=20, help="number of embedding repetitions")
     args = ap.parse_args()
 
-    print("[DATA] carregando ZOVER...", flush=True)
+    print("[DATA] loading ZOVER...", flush=True)
     data = load_fasta(VIRAL, 1) + load_fasta(NONVIRAL, 0)
     seqs = [d[0] for d in data]
     labels = [d[1] for d in data]
 
-    # split 80/20 fixo (mesmo de sempre)
+    # fixed 80/20 split, the same one used throughout
     idx = list(range(len(seqs)))
     idx_pool, idx_test, y_pool, y_test = train_test_split(
         idx, labels, test_size=0.2, random_state=SEED_SPLIT, stratify=labels)
@@ -78,19 +73,19 @@ def main():
     y_test = np.array([labels[i] for i in idx_test])
     print(f"[DATA] pool={len(pool_seqs)} test={len(test_seqs)}", flush=True)
 
-    print("[DATA] carregando amazonicos (OOD)...", flush=True)
+    print("[DATA] loading Amazonian sequences (out of distribution)...", flush=True)
     amazon_pos = [str(r.seq).upper() for r in SeqIO.parse(str(AMAZON_POS), "fasta")]
     amazon_neg = [str(r.seq).upper() for r in SeqIO.parse(str(AMAZON_NEG), "fasta")]
     print(f"[DATA] OOD: {len(amazon_pos)} virus, {len(amazon_neg)} host", flush=True)
 
-    # pre-computa k-mers do pool (reusado em cada rodada para treinar embedding)
+    # pre-compute the pool k-mers, reused by every repetition to train the embedding
     pool_kmers = [kmers(s) for s in pool_seqs]
 
     rows = []
     for run in range(1, args.n + 1):
         t0 = time.time()
-        # embedding fresco: SEM seed fixa, workers default -> captura a
-        # nao-determinancia real do pipeline
+        # fresh embedding, no fixed seed and default workers, so that the real
+        # non-determinism of the pipeline is captured
         emb = Word2Vec(sentences=pool_kmers, vector_size=100, window=5,
                        min_count=5, sg=1)
 
@@ -104,11 +99,11 @@ def main():
         Xt = np.vstack([mean_vec(s, emb) for s in test_seqs])
         f1_id = f1_score(y_test, clf.predict(Xt), zero_division=0)
 
-        # OOD recall (positivos)
+        # out-of-distribution recall, on the positives
         Xpos = np.vstack([mean_vec(s, emb) for s in amazon_pos])
         rec_ood = clf.predict(Xpos).mean()
 
-        # OOD especificidade (negativos)
+        # out-of-distribution specificity, on the negatives
         Xneg = np.vstack([mean_vec(s, emb) for s in amazon_neg])
         spec_ood = 1 - clf.predict(Xneg).mean()
 
@@ -118,17 +113,17 @@ def main():
         print(f"  run {run:2d}/{args.n}: F1_indist={f1_id:.4f}  "
               f"recall_OOD={rec_ood:.4f}  spec_OOD={spec_ood:.4f}  ({dt:.0f}s)",
               flush=True)
-        # salva incremental
+        # save incrementally
         pd.DataFrame(rows).to_csv(ENIAC/"results/embedding_variance_v2.csv", index=False)
 
     df = pd.DataFrame(rows)
-    print("\n=== RESUMO (", args.n, "rodadas) ===")
+    print("\n=== SUMMARY (", args.n, "repetitions) ===")
     for col, name in [("f1_indist", "F1 in-distribution"),
                       ("recall_ood", "Recall OOD (82 virus)"),
-                      ("specificity_ood", "Especificidade OOD (8200 host)")]:
-        print(f"  {name:32s}: media={df[col].mean():.4f}  std={df[col].std():.4f}  "
+                      ("specificity_ood", "Specificity OOD (7542 host)")]:
+        print(f"  {name:32s}: mean={df[col].mean():.4f}  std={df[col].std():.4f}  "
               f"min={df[col].min():.4f}  max={df[col].max():.4f}")
-    print(f"\n[OK] salvo em results/embedding_variance_v2.csv")
+    print("\n[OK] written to results/embedding_variance_v2.csv")
 
 
 if __name__ == "__main__":

@@ -1,9 +1,14 @@
 #!/usr/bin/env python3
-"""McNemar pareado: cada modelo proposto (em 20 execucoes de embedding) vs
-cada ferramenta externa, sobre as 82 sequencias virais (recall). Reporta
-mediana e faixa de p-valor e quantas execucoes dao p<0.05."""
-import numpy as np, json, csv
-import os
+"""
+Paired McNemar test between each proposed model, over 20 embedding
+repetitions, and each reference tool, on the 82 Amazonian viral sequences.
+Reports the median and the range of the p-values and how many repetitions fall
+below 0.05.
+
+Output: results/mcnemar_proposed_vs_external.json
+"""
+import json, os
+import numpy as np
 from pathlib import Path
 from Bio import SeqIO
 from gensim.models import Word2Vec, FastText
@@ -11,6 +16,7 @@ from sklearn.model_selection import train_test_split
 from statsmodels.stats.contingency_tables import mcnemar
 from xgboost import XGBClassifier
 from sklearn.ensemble import ExtraTreesClassifier
+import pandas as pd
 
 E=Path(__file__).resolve().parents[1]
 VSC=Path(os.environ.get("VSC_ROOT", E.parent/"Viral-Sequence-Classification"))
@@ -23,12 +29,11 @@ def vec(s,m):
     return np.mean(v,axis=0) if v else np.zeros(m.vector_size,dtype=np.float32)
 def acc(s): return str(s).split('|')[0].split()[0].split('.')[0]
 
-# 82 positivos (ordem fixa)
+# the 82 positives, in fixed order
 precs=list(SeqIO.parse(str(E/"data/amazon_viruses.fasta"),"fasta"))
 pos=[str(r.seq).upper() for r in precs]; pos_acc=[acc(r.id) for r in precs]
 
-# externas: predicao binaria por sequencia (1=viral)
-import pandas as pd
+# reference tools: one binary prediction per sequence, 1 = viral
 dvf=pd.read_csv(RW/"amazon82/dvf_amazon82.txt",sep="\t"); dvf['a']=dvf['name'].map(acc)
 dvf_set=set(dvf[(dvf.score>=0.5)&(dvf.pvalue<0.05)]['a'])
 vs2_set=set(pd.read_csv(RW/"amazon82/vs2_amazon82.tsv",sep="\t")['seqname'].map(acc))
@@ -37,7 +42,7 @@ ext={"geNomad":np.array([1 if a in gen_set else 0 for a in pos_acc]),
      "DeepVirFinder":np.array([1 if a in dvf_set else 0 for a in pos_acc]),
      "VirSorter2":np.array([1 if a in vs2_set else 0 for a in pos_acc])}
 
-# pool de treino
+# training pool
 data=load(VSC/"src/data/training/viral.fasta",1)+load(VSC/"src/data/training/nonviral.fasta",0)
 seqs=[d[0] for d in data]; lab=[d[1] for d in data]
 ip,_,_,_=train_test_split(list(range(len(seqs))),lab,test_size=0.2,random_state=42,stratify=lab)
@@ -59,9 +64,9 @@ for run in range(1,N+1):
     print(f"run {run}/{N}",flush=True)
 
 out={}
-print("\n=== McNemar proposto vs externa (82 positivos, 20 execucoes) ===")
+print("\n=== McNemar, proposed vs reference tool (82 positives, 20 repetitions) ===")
 for k,v in pvals.items():
     v=np.array(v); out[k]={"median_p":round(float(np.median(v)),3),"min_p":round(float(v.min()),3),"max_p":round(float(v.max()),3),"n_signif":int((v<0.05).sum())}
-    print(f"  {k:26s}: mediana p={np.median(v):.3f}  faixa [{v.min():.3f},{v.max():.3f}]  signif(p<0.05): {int((v<0.05).sum())}/{N}")
-json.dump(out,open("results/mcnemar_proposed_vs_external.json","w"),indent=2)
+    print(f"  {k:26s}: median p={np.median(v):.3f}  range [{v.min():.3f},{v.max():.3f}]  significant(p<0.05): {int((v<0.05).sum())}/{N}")
+json.dump(out,open(E/"results/mcnemar_proposed_vs_external.json","w"),indent=2)
 print("OK -> results/mcnemar_proposed_vs_external.json")
