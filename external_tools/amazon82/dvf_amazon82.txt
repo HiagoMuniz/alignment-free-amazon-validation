@@ -1,0 +1,83 @@
+name	len	score	pvalue
+PV269761.1 Jurua Jon-like virus strain A3_2/780/BR2021 RNA-dependent RNA polymerase (RdRp) gene, partial cds	1162	0.5406166315078735	0.05041921595286653
+PV269760.1 Anopheles triannulatus orthophasmavirus isolate B6_22/775/BR2021 RNA-dependent RNA polymerase (RdRp) gene, partial cds	1152	0.9385428428649902	0.014936928771055215
+PV335191.1 Alajuela virus strain F17_5/2/BR2021 segment L, complete sequence	6934	0.7520630359649658	0.029137397084371932
+PV335215.1 Merida virus isolate C8_31/BR2021, complete genome	12006	0.7906511425971985	0.026116020847496035
+PV357251.1 Merida virus isolate C7_13/BR2021 nucleoprotein (N), phosphoprotein (P), matrix protein (M), glycoprotein (G), and RNA-dependent RNA polymerase (RdRp) genes, complete cds	11865	0.7378373146057129	0.030024926353954227
+PV357252.1 Merida virus isolate F16_1/BR2021 nucleoprotein (N), phosphoprotein (P), matrix protein (M), glycoprotein (G), and RNA-dependent RNA polymerase (RdRp) genes, complete cds	11779	0.7002542018890381	0.03295188458342775
+PV335218.1 Merida virus isolate G19_1/BR2021, complete genome	11777	0.7925177812576294	0.02596495203565224
+PV335216.1 Merida virus isolate F16_2/BR2021, complete genome	11775	0.802702009677887	0.0249641211571871
+PV335217.1 Merida virus isolate F16_9/BR2021, complete genome	11773	0.7085410356521606	0.03247979454641589
+PV335219.1 Merida virus isolate G19_4/BR2021, complete genome	11766	0.6916353702545166	0.03383941385301004
+PV357253.1 Merida virus isolate G19_2/BR2021 RNA-dependent RNA polymerase (RdRp) gene, partial cds	5921	0.6016550064086914	0.04214819850441876
+PV335220.1 Merida virus isolate H22_1/BR2021, complete genome	11766	0.7396517992019653	0.02991162474507138
+PV357254.1 Merida virus isolate H22_2/BR2021 RNA-dependent RNA polymerase (RdRp) gene, complete cds	6963	0.7764651775360107	0.027192386131883073
+PV335222.1 Merida virus isolate H22_3/BR2021, partial genome	9346	0.8649125099182129	0.02050759120779515
+PV357255.1 Merida virus isolate H22_5/BR2021 RNA-dependent RNA polymerase (RdRp) gene, partial cds	4759	0.6652804613113403	0.03589772641438175
+PV335223.1 Merida virus isolate H22_8/BR2021, partial genome	8984	0.8959715962409973	0.01803383941385301
+PV357256.1 Merida virus isolate H22_9/BR2021 RNA-dependent RNA polymerase gene, partial cds	2127	0.8132530450820923	0.02418989349648765
+PV357257.1 Merida virus isolate H22_10/BR2021 RNA-dependent RNA polymerase (RdRp) gene, partial cds	2489	0.3956431448459625	0.097571568849611
+PV335221.1 Merida virus isolate H22_12/BR2021, complete genome	11766	0.8005332350730896	0.025209607976433266
+PV335194.1 Anopheles darlingi virus isolate M36_2/2/BR2022, complete genome	12506	0.7169979214668274	0.031667799682755494
+PV335195.1 Anopheles darlingi virus isolate M37_4/1/BR2022, complete genome	8975	0.6182899475097656	0.040240954754890854
+PV335196.1 Opsiphanes invirae iflavirus 1 isolate E14_41/1/BR2021, complete genome	10155	0.5878807306289673	0.04369665382581766
+PV335197.1 Jurua iflavirus 1 isolate G20_6/1/BR2021, complete genome	10239	0.8282616138458252	0.023113528212100613
+PV335198.1 Jurua iflavirus 2 isolate I23_2/1/BR2022 polyprotein gene, partial cds	9185	0.5953319072723389	0.04296019336807916
+PV335199.1 Jurua iflavirus 3 isolate C7_10/152/BR2021 polyprotein gene, partial cds	2406	0.9577211141586304	0.012689780194878767
+PV335214.1 Jurua iflavirus 4 isolate E14_28/46/BR2021 polyprotein gene, partial cds	2031	0.9209047555923462	0.016277664476168893
+PV335213.1 Jurua iflavirus 4 isolate A1_28/522/BR2021 polyprotein gene, partial cds	1549	0.5624486207962036	0.04654807764936929
+PV335202.1 Culex flavivirus isolate G19_2/50/BR2021 polyprotein gene, partial cds	3088	0.9902105927467346	0.00732683737442405
+PV335200.1 Culex flavivirus isolate C9_17/18/BR2021 polyprotein gene, partial cds	3477	0.8230287432670593	0.023472316640229626
+PV335201.1 Culex flavivirus isolate F16_9/7/BR2021 polyprotein gene, partial cds	2954	0.9667981266975403	0.011424578895686986
+PV335203.1 Culex flavivirus isolate G21_2/91/BR2021 polyprotein gene, partial cds	3442	0.9899721145629883	0.007421255381826422
+PV357258.1 Alphamesonivirus cavallyense isolate H22_5/2/BR2021 Polyprotein 1a (ORF1a) gene, partial cds; and Polyprotein 1b (ORF1b) gene, complete cds	9912	0.9511692523956299	0.013501775058539165
+PV335224.1 Alphamesonivirus 1 isolate G19_1/1/BR2021 complete genome	20816	0.6426573991775513	0.03772943575798776
+PV335225.1 Carauari mesonivirus isolate M36_2/1/BR2022 complete genome	19776	0.979059100151062	0.009422917138756703
+PV335226.1 Jurua mesonivirus isolate G21_1/1/BR2021 complete genome	20449	0.9620137214660645	0.012085504947503588
+PV335204.1 Caaingua virus isolate K30_25/2/BR2022, partial genome	12091	0.4837881624698639	0.0723053100687363
+PV335205.1 Caaingua virus isolate K31_1/1/BR2022, complete genome	12052	0.4417478144168854	0.08576931792431453
+PV335207.1 Caaingua virus isolate L34_14/1/BR2022, complete genome	12041	0.3063702881336212	0.11766372082483571
+PV335206.1 Caaingua virus isolate K31_30/1/BR2022, partial genome	10132	0.2966980040073395	0.120024171009895
+PV335208.1 Jurua alphavirus isolate B5_100/1/BR2021, complete genome	10990	0.24580951035022736	0.13339376085807086
+PV335209.1 Jurua totivirus 1 isolate B5_76/37/BR2021 RNA-dependent RNA polymerase, partial CDS	2077	0.6174541711807251	0.0403542563637737
+PV335212.1 Jurua totivirus 2 isolate F17_2/263/BR2021 RNA-dependent RNA polymerase (RdRp) gene, partial cds	1195	0.4819754660129547	0.07311730493239671
+PV335187.1 Jurua cumuto-like virus isolate B6_22/2/BR2021 segment L, complete sequence	6425	0.9990179538726807	0.003569000679809653
+PV274268.1 MAG: Orthophasmavirus sp. isolate D11_14/100/BR2021 cRNA sequence	1282	0.9718027114868164	0.010518166024624217
+PV274267.1 MAG: Orthophasmavirus sp. isolate D11_6/167/BR2021 cRNA sequence	1195	0.4326956272125244	0.08820530251529572
+PV335190.1 Jurua goukovirus isolate E14_28/17/BR2021 segment L, complete sequence	3129	0.9842406511306763	0.008686456681018204
+PV274273.1 MAG: Orthophasmavirus sp. isolate D10_8/18/BR2021 cRNA sequence	3629	0.9957762360572815	0.0058350328574665765
+PV274266.1 MAG: Orthophasmavirus sp. isolate D11_2/141/BR2021 cRNA sequence	2660	0.4713252782821655	0.07700732683737442
+PV274269.1 MAG: Orthophasmavirus sp. isolate I24_22/11/BR2022 cRNA sequence	2317	0.769579291343689	0.027853312183699675
+PV335210.1 Jurua totivirus 2 isolate D10_1/127/BR2021 RNA-dependent RNA polymerase (RdRp) gene, partial cds	1252	0.6531547904014587	0.03680413928544452
+PV274272.1 MAG: Orthophasmavirus sp. isolate D10_16/3/BR2021 cRNA sequence	4751	0.9995956420898438	0.0026625878087468842
+PV335211.1 Jurua totivirus 2 isolate D10_2/1706/BR2021 RNA-dependent RNA polymerase (RdRp) gene, partial cds	1214	0.3014545142650604	0.1188533877181056
+PV287668.1 Coredo-like virus 3 isolate I24_20/37/BR2022 RNA-dependent RNA polymerase (RdRp) gene, partial cds	1725	0.8220186233520508	0.02354785104615152
+PV287664.1 Coredo-like virus 3 isolate B5_100/3/BR2021 RNA-dependent RNA polymerase (RdRp) gene, partial cds	2105	0.9403235912322998	0.014804743560691894
+PV274270.1 MAG: Orthophasmavirus sp. isolate C7_12/19/BR2021 cRNA sequence	2429	0.9767643809318542	0.009687287559483344
+PV287665.1 Coredo-like virus 3 isolate B5_2/984/BR2021 RNA-dependent RNA polymerase (RdRp) gene, partial cds	1074	0.6643406748771667	0.03597326082030365
+PV287669.1 Coredo-like virus 3 isolate I24_2/44/BR2022 RNA-dependent RNA polymerase (RdRp) gene, partial cds	1336	0.9818897247314453	0.009026361507666742
+PV274271.1 MAG: Orthophasmavirus sp. isolate C8_15/82/BR2021 cRNA sequence	1450	0.9087799191474915	0.017089659339829293
+PV287672.1 Coredo-like virus 3 isolate J26_19/389/BR2022 RNA-dependent RNA polymerase (RdRp) gene, partial cds	1006	0.9992369413375854	0.0032479794546415894
+PV269766.1 Jurua orthophasmavirus strain J27_25/5/BR2022 RNA-dependent RNA polymerase (RdRp) gene, partial cds	1218	0.9994301795959473	0.0029647254324344737
+PV287671.1 Coredo-like virus 3 isolate I25_31/6/BR2022 RNA-dependent RNA polymerase (RdRp) gene, partial cds	2709	0.999828040599823	0.0019827781554498073
+PV269767.1 Coredo virus strain B5_77/9/BR2021 RNA-dependent RNA polymerase (RdRp) gene, partial cds	3378	0.9864741563796997	0.00823325024548682
+PV287661.1 Coredo-like virus 3 isolate B4_60/13/BR2021 RNA-dependent RNA polymerase (RdRp) gene, partial cds	3950	0.9863131046295166	0.00823325024548682
+PV269768.1 Coredo virus strain E15_1/19/BR2021 RNA-dependent RNA polymerase (RdRp) gene, partial cds	3066	0.9983809590339661	0.004343228340509102
+PV287662.1 Coredo-like virus 3 isolate B4_82/35/BR2021 RNA-dependent RNA polymerase (RdRp) gene, partial cds	3071	0.9997707605361938	0.002077196162852179
+PV274264.1 MAG: Orthophasmavirus sp. isolate B5_87/7/BR2021 cRNA sequence	5613	0.9948358535766602	0.006118286879673691
+PV287666.1 Coredo-like virus 3 isolate I23_2/148/BR2022 RNA-dependent RNA polymerase (RdRp) gene, partial cds	1028	0.9959560632705688	0.005816149255986102
+PV287673.1 Coredo-like virus 3 isolate J26_21/216/BR2022 RNA-dependent RNA polymerase (RdRp) gene, partial cds	2148	0.9996888637542725	0.002379333786539769
+PV274274.1 MAG: Orthophasmavirus sp. isolate E14_14/35/BR2021 cRNA sequence	3129	0.9997864365577698	0.0020394289598912306
+PV287670.1 Coredo-like virus 3 isolate I24_5/15/BR2022 RNA-dependent RNA polymerase (RdRp) gene, partial cds	1757	0.9944471120834351	0.006212704887076063
+PV287674.1 Coredo-like virus 3 isolate J26_9/180/BR2022 RNA-dependent RNA polymerase (RdRp) gene, partial cds	1535	0.8406402468681335	0.02218823173955737
+PV274275.1 MAG: Orthophasmavirus sp. isolate F16_7/34/BR2021 cRNA sequence	1901	0.9998572468757629	0.0019072437495279099
+PV287675.1 Coredo-like virus 3 isolate J27_24/85/BR2022 RNA-dependent RNA polymerase (RdRp) gene, partial cds	1800	0.9647337198257446	0.011632298511972203
+PV287678.1 Jurua mobuvirus isolate D10_2/25/BR2021 RNA-dependent RNA polymerase (RdRp) gene, partial cds	3998	0.7872726321220398	0.026304856862300777
+PV287659.1 Coredo-like virus 3 isolate A3_18/51/BR2021 RNA-dependent RNA polymerase (RdRp) gene, partial cds	2231	0.9923698902130127	0.0068547473374121915
+PV287660.1 Coredo-like virus 3 isolate B4_59/8/BR2021 RNA-dependent RNA polymerase (RdRp) gene, partial cds	4088	0.9985421895980835	0.0042110431301457816
+PV287677.1 Jurua mobuvirus isolate C7_2/2/BR2021 RNA-dependent RNA polymerase (RdRp) gene, partial cds	4109	0.9905632138252258	0.007270186569982627
+PV287663.1 Coredo-like virus 3 isolate B4_96/22/BR2021 RNA-dependent RNA polymerase (RdRp) gene, partial cds	2478	0.9764783978462219	0.009725054762444294
+PV287667.1 Coredo-like virus 3 isolate I23_87/2/BR2022 RNA-dependent RNA polymerase (RdRp) gene, partial cds	3980	0.9952248334884644	0.0060049852707908455
+PV274263.1 MAG: Orthophasmavirus sp. isolate B5_84/7/BR2021 cRNA sequence	5284	0.9837157726287842	0.008743107485459627
+PV287676.1 Jurua narangue-like virus isolate B4_1/11/BR2021 RNA-dependent RNA polymerase (RdRp) gene, partial cds	2507	0.9934877753257751	0.006628144119646499
+PV274265.1 MAG: Orthophasmavirus sp. isolate D10_17/30/BR2021 cRNA sequence	1827	0.42059412598609924	0.09169876878918347

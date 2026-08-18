@@ -1,0 +1,27 @@
+cff-version: 1.2.0
+message: "If you use this material, please cite the paper below."
+title: "Alignment-Free Viral Metagenomics: External Validation of K-mer Based Ensemble Classifiers on an Independent Amazonian Dataset — reproduction package"
+authors:
+  - family-names: "Muniz"
+    given-names: "Hiago D."
+  - family-names: "Corrêa"
+    given-names: "Ulisses B."
+  - family-names: "de Almeida"
+    given-names: "João Paulo P."
+  - family-names: "Silveira Júnior"
+    given-names: "Carlos Augusto Calage"
+license: MIT
+preferred-citation:
+  type: conference-paper
+  title: "Alignment-Free Viral Metagenomics: External Validation of K-mer Based Ensemble Classifiers on an Independent Amazonian Dataset"
+  authors:
+    - family-names: "Muniz"
+      given-names: "Hiago D."
+    - family-names: "Corrêa"
+      given-names: "Ulisses B."
+    - family-names: "de Almeida"
+      given-names: "João Paulo P."
+    - family-names: "Silveira Júnior"
+      given-names: "Carlos Augusto Calage"
+  collection-title: "Anais do Encontro Nacional de Inteligência Artificial e Computacional (ENIAC)"
+  year: 2026

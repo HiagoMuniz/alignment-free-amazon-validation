@@ -1,0 +1,16 @@
+# Trained artefacts (see README, "Not included here")
+models/
+*.joblib
+*.model
+*.model.*.npy
+*.pt
+
+# Intermediates from MMseqs2 and the external tools
+results/leakage_check/tmp*/
+*.tmp
+
+__pycache__/
+*.pyc
+.DS_Store
+.idea/
+.vscode/

@@ -1,0 +1,62 @@
+{
+  "XGBoost": {
+    "rec": [
+      0.8232,
+      0.0125
+    ],
+    "spec": [
+      0.8783,
+      0.0095
+    ],
+    "roc": [
+      0.9494,
+      0.0049
+    ],
+    "pr": [
+      0.5475,
+      0.0252
+    ],
+    "fam": {
+      "Phasmaviridae": 0.983,
+      "Phenuiviridae": 1.0,
+      "Peribunyaviridae": 1.0,
+      "Rhabdoviridae": 0.975,
+      "Xinmoviridae": 1.0,
+      "Iflaviridae": 0.592,
+      "Flaviviridae": 0.613,
+      "Mesoniviridae": 0.0,
+      "Togaviridae": 0.21,
+      "Totiviridae": 0.613
+    }
+  },
+  "ExtraTrees": {
+    "rec": [
+      0.8463,
+      0.0112
+    ],
+    "spec": [
+      0.8868,
+      0.0122
+    ],
+    "roc": [
+      0.9477,
+      0.005
+    ],
+    "pr": [
+      0.5075,
+      0.0257
+    ],
+    "fam": {
+      "Phasmaviridae": 0.973,
+      "Phenuiviridae": 1.0,
+      "Peribunyaviridae": 1.0,
+      "Rhabdoviridae": 0.966,
+      "Xinmoviridae": 1.0,
+      "Iflaviridae": 0.858,
+      "Flaviviridae": 0.662,
+      "Mesoniviridae": 0.0,
+      "Togaviridae": 0.02,
+      "Totiviridae": 1.0
+    }
+  }
+}

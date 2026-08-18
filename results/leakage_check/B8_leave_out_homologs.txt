@@ -1,0 +1,9 @@
+Analise B8: recall com e sem as 4 sequencias com homologo divergente
+(~72% id) no treino (PV335200-203, todas Flaviviridae).
+Embedding unico representativo (results/amazon_predictions.csv).
+
+COM as 4 (n=82):  XGBoost 67/82=81.7%  ExtraTrees 68/82=82.9%
+SEM as 4 (n=78):  XGBoost 63/78=80.8%  ExtraTrees 66/78=84.6%
+
+Conclusao: remover as 4 nao aumenta a revocacao (XGB cai <1pp, ET sobe
+~1.7pp). O desempenho nao e sustentado por sequencias semi-in-distribution.

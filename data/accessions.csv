@@ -1,0 +1,83 @@
+accession,species,family,novel,pool
+PV269761,Jurua Jon-like virus,Phasmaviridae,Yes,A3_2
+PV269760,Anopheles triannulatus Orthophasmavirus,Phasmaviridae,No,B6_22
+PV269766,Jurua Orthophasmavirus,Phasmaviridae,Yes,J27_25
+PV269768,Coredo virus,Phasmaviridae,No,E15_1
+PV269767,Coredo virus,Phasmaviridae,No,B5_77
+PV274264,Coredo-like virus 1,Phasmaviridae,Yes,B5_87
+PV274263,Coredo-like virus 1,Phasmaviridae,Yes,B5_84
+PV274265,Coredo-like virus 1,Phasmaviridae,Yes,D10_17
+PV274268,Coredo-like virus 1,Phasmaviridae,Yes,D11_14
+PV274266,Coredo-like virus 1,Phasmaviridae,Yes,D11_2
+PV274267,Coredo-like virus 1,Phasmaviridae,Yes,D11_6
+PV274269,Coredo-like virus 1,Phasmaviridae,Yes,I24_22
+PV274270,Coredo-like virus 2,Phasmaviridae,Yes,C7_12
+PV274271,Coredo-like virus 2,Phasmaviridae,Yes,C8_15
+PV274273,Coredo-like virus 2,Phasmaviridae,Yes,D10_8
+PV274272,Coredo-like virus 2,Phasmaviridae,Yes,D10_16
+PV274274,Coredo-like virus 2,Phasmaviridae,Yes,E14_14
+PV274275,Coredo-like virus 2,Phasmaviridae,Yes,F16_7
+PV287660,Coredo-like virus 3,Phasmaviridae,Yes,B4_59
+PV287663,Coredo-like virus 3,Phasmaviridae,Yes,B4_96
+PV287664,Coredo-like virus 3,Phasmaviridae,Yes,B5_100
+PV287665,Coredo-like virus 3,Phasmaviridae,Yes,B5_2
+PV287668,Coredo-like virus 3,Phasmaviridae,Yes,I24_20
+PV287669,Coredo-like virus 3,Phasmaviridae,Yes,I24_2
+PV287673,Coredo-like virus 3,Phasmaviridae,Yes,J26_21
+PV287674,Coredo-like virus 3,Phasmaviridae,Yes,J26_9
+PV287675,Coredo-like virus 3,Phasmaviridae,Yes,J27_24
+PV287659,Coredo-like virus 3,Phasmaviridae,Yes,A3_18
+PV287666,Coredo-like virus 3,Phasmaviridae,Yes,I23_2
+PV287670,Coredo-like virus 3,Phasmaviridae,Yes,I24_5
+PV287672,Coredo-like virus 3,Phasmaviridae,Yes,J26_19
+PV287661,Coredo-like virus 3,Phasmaviridae,Yes,B4_60
+PV287671,Coredo-like virus 3,Phasmaviridae,Yes,I25_31
+PV287662,Coredo-like virus 3,Phasmaviridae,Yes,B4_82
+PV287667,Coredo-like virus 3,Phasmaviridae,Yes,I23_87
+PV287676,Jurua Narangue-like virus,Phenuiviridae,Yes,B4_1
+PV287678,Jurua Mobuvirus,Phenuiviridae,Yes,D10_2
+PV287677,Jurua Mobuvirus,Phenuiviridae,Yes,C7_2
+PV335187,Jurua Cumuto-like virus,Phenuiviridae,Yes,B6_22
+PV335190,Jurua Goukovirus,Phenuiviridae,Yes,E14_28
+PV335191,Alajuela virus,Peribunyaviridae,No,F17_5
+PV335215,Merida virus,Rhabdoviridae,No,C8_31
+PV357251,Merida virus,Rhabdoviridae,No,C7_13
+PV357252,Merida virus,Rhabdoviridae,No,F16_1
+PV335218,Merida virus,Rhabdoviridae,No,G19_1
+PV335216,Merida virus,Rhabdoviridae,No,F16_2
+PV335217,Merida virus,Rhabdoviridae,No,F16_9
+PV335219,Merida virus,Rhabdoviridae,No,G19_4
+PV357253,Merida virus,Rhabdoviridae,No,G19_2
+PV335220,Merida virus,Rhabdoviridae,No,H22_1
+PV357254,Merida virus,Rhabdoviridae,No,H22_2
+PV335222,Merida virus,Rhabdoviridae,No,H22_3
+PV357255,Merida virus,Rhabdoviridae,No,H22_5
+PV335223,Merida virus,Rhabdoviridae,No,H22_8
+PV357256,Merida virus,Rhabdoviridae,No,H22_9
+PV357257,Merida virus,Rhabdoviridae,No,H22_10
+PV335221,Merida virus,Rhabdoviridae,No,H22_12
+PV335194,Anopheles darlingui virus,Xinmoviridae,No,M36_2
+PV335195,Anopheles darlingui virus,Xinmoviridae,No,M37_4
+PV335196,Opsiphanes invirae iflavirus 1,Iflaviridae,No,E14_41
+PV335197,Jurua Iflavirus 1,Iflaviridae,Yes,G20_6
+PV335198,Jurua Iflavirus 2,Iflaviridae,Yes,I23_2
+PV335199,Jurua Iflavirus 3,Iflaviridae,Yes,C7_10
+PV335214,Jurua Iflavirus 4,Iflaviridae,Yes,E14_28
+PV335213,Jurua Iflavirus 4,Iflaviridae,Yes,A1_28
+PV335202,Culex flavivirus,Flaviviridae,No,G19_2
+PV335200,Culex flavivirus,Flaviviridae,No,C9_17
+PV335201,Culex flavivirus,Flaviviridae,No,F16_9
+PV335203,Culex flavivirus,Flaviviridae,No,G21_2
+PV357258,Alphamesonivirus 1,Mesoniviridae,No,H22_5
+PV335224,Alphamesonivirus 1,Mesoniviridae,No,G19_1
+PV335225,Carauari Mesonivirus,Mesoniviridae,Yes,M36_2
+PV335226,Jurua Mesonivirus,Mesoniviridae,Yes,G21_1
+PV335204,Caaingua virus,Togaviridae,No,K30_25
+PV335205,Caaingua virus,Togaviridae,No,K31_1
+PV335207,Caaingua virus,Togaviridae,No,L34_14
+PV335206,Caaingua virus,Togaviridae,No,K31_30
+PV335208,Jurua Alphavirus,Togaviridae,Yes,B5_100
+PV335209,Jurua Totivirus 1,Totiviridae,Yes,B5_76
+PV335212,Jurua Totivirus 2,Totiviridae,Yes,F17_2
+PV335210,Jurua Totivirus 2,Totiviridae,Yes,D10_1
+PV335211,Jurua Totivirus 2,Totiviridae,Yes,D10_2

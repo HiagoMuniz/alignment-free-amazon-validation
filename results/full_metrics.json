@@ -1,0 +1,66 @@
+{
+  "XGBoost": {
+    "roc_auc_mean": 0.9478583347885984,
+    "roc_auc_std": 0.004851649512262075,
+    "pr_auc_mean": 0.5302255702139471,
+    "pr_auc_std": 0.03325870380937648
+  },
+  "ExtraTrees": {
+    "roc_auc_mean": 0.9513897782175912,
+    "roc_auc_std": 0.0037380981340225856,
+    "pr_auc_mean": 0.5068149197757399,
+    "pr_auc_std": 0.036436416441148964
+  },
+  "familias": {
+    "Phasmaviridae": {
+      "n": 35,
+      "xgboost": 0.986,
+      "extratrees": 0.971
+    },
+    "Rhabdoviridae": {
+      "n": 16,
+      "xgboost": 0.975,
+      "extratrees": 0.975
+    },
+    "Iflaviridae": {
+      "n": 6,
+      "xgboost": 0.567,
+      "extratrees": 0.833
+    },
+    "Togaviridae": {
+      "n": 5,
+      "xgboost": 0.16,
+      "extratrees": 0.08
+    },
+    "Flaviviridae": {
+      "n": 4,
+      "xgboost": 0.65,
+      "extratrees": 0.775
+    },
+    "Mesoniviridae": {
+      "n": 4,
+      "xgboost": 0.0,
+      "extratrees": 0.0
+    },
+    "Totiviridae": {
+      "n": 4,
+      "xgboost": 0.5,
+      "extratrees": 1.0
+    },
+    "Phenuiviridae": {
+      "n": 5,
+      "xgboost": 1.0,
+      "extratrees": 1.0
+    },
+    "Xinmoviridae": {
+      "n": 2,
+      "xgboost": 1.0,
+      "extratrees": 1.0
+    },
+    "Peribunyaviridae": {
+      "n": 1,
+      "xgboost": 1.0,
+      "extratrees": 1.0
+    }
+  }
+}

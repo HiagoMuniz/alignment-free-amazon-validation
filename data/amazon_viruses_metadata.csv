@@ -1,0 +1,83 @@
+accession,species,family,novel,pool,length_bp,description
+PV269761,Jurua Jon-like virus,Phasmaviridae,Yes,A3_2,1162,"PV269761.1 Jurua Jon-like virus strain A3_2/780/BR2021 RNA-dependent RNA polymerase (RdRp) gene, partial cds"
+PV269760,Anopheles triannulatus Orthophasmavirus,Phasmaviridae,No,B6_22,1152,"PV269760.1 Anopheles triannulatus orthophasmavirus isolate B6_22/775/BR2021 RNA-dependent RNA polymerase (RdRp) gene, partial cds"
+PV269766,Jurua Orthophasmavirus,Phasmaviridae,Yes,J27_25,1218,"PV269766.1 Jurua orthophasmavirus strain J27_25/5/BR2022 RNA-dependent RNA polymerase (RdRp) gene, partial cds"
+PV269768,Coredo virus,Phasmaviridae,No,E15_1,3066,"PV269768.1 Coredo virus strain E15_1/19/BR2021 RNA-dependent RNA polymerase (RdRp) gene, partial cds"
+PV269767,Coredo virus,Phasmaviridae,No,B5_77,3378,"PV269767.1 Coredo virus strain B5_77/9/BR2021 RNA-dependent RNA polymerase (RdRp) gene, partial cds"
+PV274264,Coredo-like virus 1,Phasmaviridae,Yes,B5_87,5613,PV274264.1 MAG: Orthophasmavirus sp. isolate B5_87/7/BR2021 cRNA sequence
+PV274263,Coredo-like virus 1,Phasmaviridae,Yes,B5_84,5284,PV274263.1 MAG: Orthophasmavirus sp. isolate B5_84/7/BR2021 cRNA sequence
+PV274265,Coredo-like virus 1,Phasmaviridae,Yes,D10_17,1827,PV274265.1 MAG: Orthophasmavirus sp. isolate D10_17/30/BR2021 cRNA sequence
+PV274268,Coredo-like virus 1,Phasmaviridae,Yes,D11_14,1282,PV274268.1 MAG: Orthophasmavirus sp. isolate D11_14/100/BR2021 cRNA sequence
+PV274266,Coredo-like virus 1,Phasmaviridae,Yes,D11_2,2660,PV274266.1 MAG: Orthophasmavirus sp. isolate D11_2/141/BR2021 cRNA sequence
+PV274267,Coredo-like virus 1,Phasmaviridae,Yes,D11_6,1195,PV274267.1 MAG: Orthophasmavirus sp. isolate D11_6/167/BR2021 cRNA sequence
+PV274269,Coredo-like virus 1,Phasmaviridae,Yes,I24_22,2317,PV274269.1 MAG: Orthophasmavirus sp. isolate I24_22/11/BR2022 cRNA sequence
+PV274270,Coredo-like virus 2,Phasmaviridae,Yes,C7_12,2429,PV274270.1 MAG: Orthophasmavirus sp. isolate C7_12/19/BR2021 cRNA sequence
+PV274271,Coredo-like virus 2,Phasmaviridae,Yes,C8_15,1450,PV274271.1 MAG: Orthophasmavirus sp. isolate C8_15/82/BR2021 cRNA sequence
+PV274273,Coredo-like virus 2,Phasmaviridae,Yes,D10_8,3629,PV274273.1 MAG: Orthophasmavirus sp. isolate D10_8/18/BR2021 cRNA sequence
+PV274272,Coredo-like virus 2,Phasmaviridae,Yes,D10_16,4751,PV274272.1 MAG: Orthophasmavirus sp. isolate D10_16/3/BR2021 cRNA sequence
+PV274274,Coredo-like virus 2,Phasmaviridae,Yes,E14_14,3129,PV274274.1 MAG: Orthophasmavirus sp. isolate E14_14/35/BR2021 cRNA sequence
+PV274275,Coredo-like virus 2,Phasmaviridae,Yes,F16_7,1901,PV274275.1 MAG: Orthophasmavirus sp. isolate F16_7/34/BR2021 cRNA sequence
+PV287660,Coredo-like virus 3,Phasmaviridae,Yes,B4_59,4088,"PV287660.1 Coredo-like virus 3 isolate B4_59/8/BR2021 RNA-dependent RNA polymerase (RdRp) gene, partial cds"
+PV287663,Coredo-like virus 3,Phasmaviridae,Yes,B4_96,2478,"PV287663.1 Coredo-like virus 3 isolate B4_96/22/BR2021 RNA-dependent RNA polymerase (RdRp) gene, partial cds"
+PV287664,Coredo-like virus 3,Phasmaviridae,Yes,B5_100,2105,"PV287664.1 Coredo-like virus 3 isolate B5_100/3/BR2021 RNA-dependent RNA polymerase (RdRp) gene, partial cds"
+PV287665,Coredo-like virus 3,Phasmaviridae,Yes,B5_2,1074,"PV287665.1 Coredo-like virus 3 isolate B5_2/984/BR2021 RNA-dependent RNA polymerase (RdRp) gene, partial cds"
+PV287668,Coredo-like virus 3,Phasmaviridae,Yes,I24_20,1725,"PV287668.1 Coredo-like virus 3 isolate I24_20/37/BR2022 RNA-dependent RNA polymerase (RdRp) gene, partial cds"
+PV287669,Coredo-like virus 3,Phasmaviridae,Yes,I24_2,1336,"PV287669.1 Coredo-like virus 3 isolate I24_2/44/BR2022 RNA-dependent RNA polymerase (RdRp) gene, partial cds"
+PV287673,Coredo-like virus 3,Phasmaviridae,Yes,J26_21,2148,"PV287673.1 Coredo-like virus 3 isolate J26_21/216/BR2022 RNA-dependent RNA polymerase (RdRp) gene, partial cds"
+PV287674,Coredo-like virus 3,Phasmaviridae,Yes,J26_9,1535,"PV287674.1 Coredo-like virus 3 isolate J26_9/180/BR2022 RNA-dependent RNA polymerase (RdRp) gene, partial cds"
+PV287675,Coredo-like virus 3,Phasmaviridae,Yes,J27_24,1800,"PV287675.1 Coredo-like virus 3 isolate J27_24/85/BR2022 RNA-dependent RNA polymerase (RdRp) gene, partial cds"
+PV287659,Coredo-like virus 3,Phasmaviridae,Yes,A3_18,2231,"PV287659.1 Coredo-like virus 3 isolate A3_18/51/BR2021 RNA-dependent RNA polymerase (RdRp) gene, partial cds"
+PV287666,Coredo-like virus 3,Phasmaviridae,Yes,I23_2,1028,"PV287666.1 Coredo-like virus 3 isolate I23_2/148/BR2022 RNA-dependent RNA polymerase (RdRp) gene, partial cds"
+PV287670,Coredo-like virus 3,Phasmaviridae,Yes,I24_5,1757,"PV287670.1 Coredo-like virus 3 isolate I24_5/15/BR2022 RNA-dependent RNA polymerase (RdRp) gene, partial cds"
+PV287672,Coredo-like virus 3,Phasmaviridae,Yes,J26_19,1006,"PV287672.1 Coredo-like virus 3 isolate J26_19/389/BR2022 RNA-dependent RNA polymerase (RdRp) gene, partial cds"
+PV287661,Coredo-like virus 3,Phasmaviridae,Yes,B4_60,3950,"PV287661.1 Coredo-like virus 3 isolate B4_60/13/BR2021 RNA-dependent RNA polymerase (RdRp) gene, partial cds"
+PV287671,Coredo-like virus 3,Phasmaviridae,Yes,I25_31,2709,"PV287671.1 Coredo-like virus 3 isolate I25_31/6/BR2022 RNA-dependent RNA polymerase (RdRp) gene, partial cds"
+PV287662,Coredo-like virus 3,Phasmaviridae,Yes,B4_82,3071,"PV287662.1 Coredo-like virus 3 isolate B4_82/35/BR2021 RNA-dependent RNA polymerase (RdRp) gene, partial cds"
+PV287667,Coredo-like virus 3,Phasmaviridae,Yes,I23_87,3980,"PV287667.1 Coredo-like virus 3 isolate I23_87/2/BR2022 RNA-dependent RNA polymerase (RdRp) gene, partial cds"
+PV287676,Jurua Narangue-like virus,Phenuiviridae,Yes,B4_1,2507,"PV287676.1 Jurua narangue-like virus isolate B4_1/11/BR2021 RNA-dependent RNA polymerase (RdRp) gene, partial cds"
+PV287678,Jurua Mobuvirus,Phenuiviridae,Yes,D10_2,3998,"PV287678.1 Jurua mobuvirus isolate D10_2/25/BR2021 RNA-dependent RNA polymerase (RdRp) gene, partial cds"
+PV287677,Jurua Mobuvirus,Phenuiviridae,Yes,C7_2,4109,"PV287677.1 Jurua mobuvirus isolate C7_2/2/BR2021 RNA-dependent RNA polymerase (RdRp) gene, partial cds"
+PV335187,Jurua Cumuto-like virus,Phenuiviridae,Yes,B6_22,6425,"PV335187.1 Jurua cumuto-like virus isolate B6_22/2/BR2021 segment L, complete sequence"
+PV335190,Jurua Goukovirus,Phenuiviridae,Yes,E14_28,3129,"PV335190.1 Jurua goukovirus isolate E14_28/17/BR2021 segment L, complete sequence"
+PV335191,Alajuela virus,Peribunyaviridae,No,F17_5,6934,"PV335191.1 Alajuela virus strain F17_5/2/BR2021 segment L, complete sequence"
+PV335215,Merida virus,Rhabdoviridae,No,C8_31,12006,"PV335215.1 Merida virus isolate C8_31/BR2021, complete genome"
+PV357251,Merida virus,Rhabdoviridae,No,C7_13,11865,"PV357251.1 Merida virus isolate C7_13/BR2021 nucleoprotein (N), phosphoprotein (P), matrix protein (M), glycoprotein (G), and RNA-dependent RNA polymerase (RdRp) genes, complete cds"
+PV357252,Merida virus,Rhabdoviridae,No,F16_1,11779,"PV357252.1 Merida virus isolate F16_1/BR2021 nucleoprotein (N), phosphoprotein (P), matrix protein (M), glycoprotein (G), and RNA-dependent RNA polymerase (RdRp) genes, complete cds"
+PV335218,Merida virus,Rhabdoviridae,No,G19_1,11777,"PV335218.1 Merida virus isolate G19_1/BR2021, complete genome"
+PV335216,Merida virus,Rhabdoviridae,No,F16_2,11775,"PV335216.1 Merida virus isolate F16_2/BR2021, complete genome"
+PV335217,Merida virus,Rhabdoviridae,No,F16_9,11773,"PV335217.1 Merida virus isolate F16_9/BR2021, complete genome"
+PV335219,Merida virus,Rhabdoviridae,No,G19_4,11766,"PV335219.1 Merida virus isolate G19_4/BR2021, complete genome"
+PV357253,Merida virus,Rhabdoviridae,No,G19_2,5921,"PV357253.1 Merida virus isolate G19_2/BR2021 RNA-dependent RNA polymerase (RdRp) gene, partial cds"
+PV335220,Merida virus,Rhabdoviridae,No,H22_1,11766,"PV335220.1 Merida virus isolate H22_1/BR2021, complete genome"
+PV357254,Merida virus,Rhabdoviridae,No,H22_2,6963,"PV357254.1 Merida virus isolate H22_2/BR2021 RNA-dependent RNA polymerase (RdRp) gene, complete cds"
+PV335222,Merida virus,Rhabdoviridae,No,H22_3,9346,"PV335222.1 Merida virus isolate H22_3/BR2021, partial genome"
+PV357255,Merida virus,Rhabdoviridae,No,H22_5,4759,"PV357255.1 Merida virus isolate H22_5/BR2021 RNA-dependent RNA polymerase (RdRp) gene, partial cds"
+PV335223,Merida virus,Rhabdoviridae,No,H22_8,8984,"PV335223.1 Merida virus isolate H22_8/BR2021, partial genome"
+PV357256,Merida virus,Rhabdoviridae,No,H22_9,2127,"PV357256.1 Merida virus isolate H22_9/BR2021 RNA-dependent RNA polymerase gene, partial cds"
+PV357257,Merida virus,Rhabdoviridae,No,H22_10,2489,"PV357257.1 Merida virus isolate H22_10/BR2021 RNA-dependent RNA polymerase (RdRp) gene, partial cds"
+PV335221,Merida virus,Rhabdoviridae,No,H22_12,11766,"PV335221.1 Merida virus isolate H22_12/BR2021, complete genome"
+PV335194,Anopheles darlingui virus,Xinmoviridae,No,M36_2,12506,"PV335194.1 Anopheles darlingi virus isolate M36_2/2/BR2022, complete genome"
+PV335195,Anopheles darlingui virus,Xinmoviridae,No,M37_4,8975,"PV335195.1 Anopheles darlingi virus isolate M37_4/1/BR2022, complete genome"
+PV335196,Opsiphanes invirae iflavirus 1,Iflaviridae,No,E14_41,10155,"PV335196.1 Opsiphanes invirae iflavirus 1 isolate E14_41/1/BR2021, complete genome"
+PV335197,Jurua Iflavirus 1,Iflaviridae,Yes,G20_6,10239,"PV335197.1 Jurua iflavirus 1 isolate G20_6/1/BR2021, complete genome"
+PV335198,Jurua Iflavirus 2,Iflaviridae,Yes,I23_2,9185,"PV335198.1 Jurua iflavirus 2 isolate I23_2/1/BR2022 polyprotein gene, partial cds"
+PV335199,Jurua Iflavirus 3,Iflaviridae,Yes,C7_10,2406,"PV335199.1 Jurua iflavirus 3 isolate C7_10/152/BR2021 polyprotein gene, partial cds"
+PV335214,Jurua Iflavirus 4,Iflaviridae,Yes,E14_28,2031,"PV335214.1 Jurua iflavirus 4 isolate E14_28/46/BR2021 polyprotein gene, partial cds"
+PV335213,Jurua Iflavirus 4,Iflaviridae,Yes,A1_28,1549,"PV335213.1 Jurua iflavirus 4 isolate A1_28/522/BR2021 polyprotein gene, partial cds"
+PV335202,Culex flavivirus,Flaviviridae,No,G19_2,3088,"PV335202.1 Culex flavivirus isolate G19_2/50/BR2021 polyprotein gene, partial cds"
+PV335200,Culex flavivirus,Flaviviridae,No,C9_17,3477,"PV335200.1 Culex flavivirus isolate C9_17/18/BR2021 polyprotein gene, partial cds"
+PV335201,Culex flavivirus,Flaviviridae,No,F16_9,2954,"PV335201.1 Culex flavivirus isolate F16_9/7/BR2021 polyprotein gene, partial cds"
+PV335203,Culex flavivirus,Flaviviridae,No,G21_2,3442,"PV335203.1 Culex flavivirus isolate G21_2/91/BR2021 polyprotein gene, partial cds"
+PV357258,Alphamesonivirus 1,Mesoniviridae,No,H22_5,9912,"PV357258.1 Alphamesonivirus cavallyense isolate H22_5/2/BR2021 Polyprotein 1a (ORF1a) gene, partial cds; and Polyprotein 1b (ORF1b) gene, complete cds"
+PV335224,Alphamesonivirus 1,Mesoniviridae,No,G19_1,20816,PV335224.1 Alphamesonivirus 1 isolate G19_1/1/BR2021 complete genome
+PV335225,Carauari Mesonivirus,Mesoniviridae,Yes,M36_2,19776,PV335225.1 Carauari mesonivirus isolate M36_2/1/BR2022 complete genome
+PV335226,Jurua Mesonivirus,Mesoniviridae,Yes,G21_1,20449,PV335226.1 Jurua mesonivirus isolate G21_1/1/BR2021 complete genome
+PV335204,Caaingua virus,Togaviridae,No,K30_25,12091,"PV335204.1 Caaingua virus isolate K30_25/2/BR2022, partial genome"
+PV335205,Caaingua virus,Togaviridae,No,K31_1,12052,"PV335205.1 Caaingua virus isolate K31_1/1/BR2022, complete genome"
+PV335207,Caaingua virus,Togaviridae,No,L34_14,12041,"PV335207.1 Caaingua virus isolate L34_14/1/BR2022, complete genome"
+PV335206,Caaingua virus,Togaviridae,No,K31_30,10132,"PV335206.1 Caaingua virus isolate K31_30/1/BR2022, partial genome"
+PV335208,Jurua Alphavirus,Togaviridae,Yes,B5_100,10990,"PV335208.1 Jurua alphavirus isolate B5_100/1/BR2021, complete genome"
+PV335209,Jurua Totivirus 1,Totiviridae,Yes,B5_76,2077,"PV335209.1 Jurua totivirus 1 isolate B5_76/37/BR2021 RNA-dependent RNA polymerase, partial CDS"
+PV335212,Jurua Totivirus 2,Totiviridae,Yes,F17_2,1195,"PV335212.1 Jurua totivirus 2 isolate F17_2/263/BR2021 RNA-dependent RNA polymerase (RdRp) gene, partial cds"
+PV335210,Jurua Totivirus 2,Totiviridae,Yes,D10_1,1252,"PV335210.1 Jurua totivirus 2 isolate D10_1/127/BR2021 RNA-dependent RNA polymerase (RdRp) gene, partial cds"
+PV335211,Jurua Totivirus 2,Totiviridae,Yes,D10_2,1214,"PV335211.1 Jurua totivirus 2 isolate D10_2/1706/BR2021 RNA-dependent RNA polymerase (RdRp) gene, partial cds"

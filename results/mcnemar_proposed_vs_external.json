@@ -1,0 +1,38 @@
+{
+  "XGBoost vs geNomad": {
+    "median_p": 0.238,
+    "min_p": 0.093,
+    "max_p": 0.815,
+    "n_signif": 0
+  },
+  "XGBoost vs DeepVirFinder": {
+    "median_p": 0.638,
+    "min_p": 0.21,
+    "max_p": 1.0,
+    "n_signif": 0
+  },
+  "XGBoost vs VirSorter2": {
+    "median_p": 1.0,
+    "min_p": 0.523,
+    "max_p": 1.0,
+    "n_signif": 0
+  },
+  "ExtraTrees vs geNomad": {
+    "median_p": 0.648,
+    "min_p": 0.383,
+    "max_p": 1.0,
+    "n_signif": 0
+  },
+  "ExtraTrees vs DeepVirFinder": {
+    "median_p": 1.0,
+    "min_p": 0.774,
+    "max_p": 1.0,
+    "n_signif": 0
+  },
+  "ExtraTrees vs VirSorter2": {
+    "median_p": 0.69,
+    "min_p": 0.405,
+    "max_p": 1.0,
+    "n_signif": 0
+  }
+}
