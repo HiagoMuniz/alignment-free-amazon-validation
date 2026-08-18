@@ -122,7 +122,7 @@ Scripts are anchored to the repository root and can be run from anywhere.
 | `11_all_metrics_n20.py` | 20 embedding repetitions: recall, specificity, ROC-AUC, PR-AUC and per-family recall for both models | `results/all_metrics_n20.json` | **Tables 1, 2 and 3** |
 | `12_mcnemar_proposed_vs_external.py` | Paired McNemar, each of the 20 runs against each external tool | `results/mcnemar_proposed_vs_external.json` | Section 4.3 |
 | `07_statistical_tests.py` | Wilson confidence intervals and McNemar among the external tools | `results/statistical_tests.txt` | Section 4.3 |
-| `10_leakage_check.sh` | MMseqs2 search of the 82 viruses against the ZOVER training set | `results/leakage_check/` | Section 4.4 |
+| `10_leakage_check.sh` | MMseqs2 search of the 82 viruses against the ZOVER training set | `results/leakage_check/` | Section 3.1 |
 | `05b_embedding_variance_v2.py` | Embedding stochasticity, XGBoost with Word2Vec | `results/embedding_variance_v2.csv` | Section 5 |
 | `05c_embedding_variance_extratrees.py` | Embedding stochasticity, ExtraTrees with fastText | `results/embedding_variance_extratrees.csv` | Section 5 |
 | `08_roc_curve.py` | Illustrative ROC and precision-recall curve, single embedding | `results/roc_pr_curve_ilustrativa.png` | not in the paper |
