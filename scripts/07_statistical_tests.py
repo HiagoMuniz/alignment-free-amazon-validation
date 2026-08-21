@@ -1,11 +1,15 @@
 #!/usr/bin/env python3
 """
 Wilson 95% confidence intervals and paired McNemar tests for the three
-reference tools, over the 82 Amazonian viruses and the 7,542 host
-transcripts. Reads only the committed raw tool outputs, so it runs in
-seconds and needs no retraining.
+reference tools, over the 82 Amazonian viruses and the 7,542 host transcripts.
+
+Reads only the committed raw tool outputs plus results/all_metrics_n20.json, so
+it runs in seconds and needs no retraining. The figures for the proposed
+classifiers come from that same JSON, which is the source of Table 1, so the two
+cannot diverge.
 """
-import pandas as pd, numpy as np
+import json
+import numpy as np, pandas as pd
 from pathlib import Path
 from statsmodels.stats.proportion import proportion_confint
 from statsmodels.stats.contingency_tables import mcnemar
@@ -32,11 +36,14 @@ print("=== RECALL with 95% Wilson CI (n=82 positives) ===")
 for m,s in methods.items():
     tp=sum(1 for a in pos_acc if a in s)
     lo,hi=proportion_confint(tp,N,method="wilson")
-    print(f"  {m:16s}: {tp}/{N} = {tp/N:.1%}  95% CI [{lo:.1%}, {hi:.1%}]")
-# proposed classifier: mean +- sd over 20 embeddings
-ev=pd.read_csv(ROOT/"results/embedding_variance_v2.csv")
-m_=ev.recall_ood.mean(); s_=ev.recall_ood.std()
-print(f"  {'XGBoost (20 emb)':16s}: {m_:.1%} +/- {s_:.1%}  (range {ev.recall_ood.min():.1%}-{ev.recall_ood.max():.1%})")
+    print(f"  {m:18s}: {tp}/{N} = {tp/N:.1%}  95% CI [{lo:.1%}, {hi:.1%}]")
+# proposed classifiers: mean +- sd over the same 20 embedding repetitions that
+# produce Table 1, read from all_metrics_n20.json so that this file cannot drift
+# from the published tables
+prop=json.load(open(ROOT/"results/all_metrics_n20.json"))
+for m in ("ExtraTrees","XGBoost"):
+    mu,sd=prop[m]["rec"]
+    print(f"  {m+' (20 emb)':18s}: {mu*100:.1f}% +/- {sd*100:.2f} pp")
 
 print("\n=== Paired McNemar among the reference tools, on the positives ===")
 names=list(methods)
@@ -59,6 +66,7 @@ genn=RW/"negatives/genomad_negv2.tsv"
 genn=pd.read_csv(genn,sep="\t"); gen_fp=genn['seq_name'].map(acc).nunique() if len(genn) else 0
 for m,fp in [("DeepVirFinder",dvf_fp),("VirSorter2",vs2_fp),("geNomad",gen_fp)]:
     tn=NEG-fp; lo,hi=proportion_confint(tn,NEG,method="wilson")
-    print(f"  {m:16s}: {tn}/{NEG} = {tn/NEG:.1%}  95% CI [{lo:.1%}, {hi:.1%}]  (FP={fp})")
-m_=ev.specificity_ood.mean(); s_=ev.specificity_ood.std()
-print(f"  {'XGBoost (20 emb)':16s}: {m_:.1%} +/- {s_:.1%}")
+    print(f"  {m:18s}: {tn}/{NEG} = {tn/NEG:.1%}  95% CI [{lo:.1%}, {hi:.1%}]  (FP={fp})")
+for m in ("ExtraTrees","XGBoost"):
+    mu,sd=prop[m]["spec"]
+    print(f"  {m+' (20 emb)':18s}: {mu*100:.1f}% +/- {sd*100:.2f} pp")

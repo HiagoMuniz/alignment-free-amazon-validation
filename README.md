@@ -40,8 +40,8 @@ of the 20 runs of each proposed model and each external tool found no
 significant difference in any of the 6 pairs (0 of 20 runs below α = 0.05,
 median p between 0.24 and 1.00). The proposed classifiers trail the annotation
 tools in specificity but run on CPU in about 15 seconds for the full set of
-7,624 sequences, against 3 to 49 minutes for the reference tools, with no
-marker-gene database required. Versions, exact command lines, decision
+7,624 sequences per model, against 3 to 49 minutes for the reference tools, with
+no marker-gene database required. Versions, exact command lines, decision
 criteria and timings for the three tools are in
 [`external_tools/README.md`](external_tools/README.md).
 
@@ -66,7 +66,9 @@ sporadically. Per-family numbers are in `results/all_metrics_n20.json`.
 └── external_tools/
     ├── README.md                          # tool versions, command lines, decision criteria, timings
     ├── amazon82/                          # raw geNomad, VirSorter2 and DeepVirFinder output on the 82 viruses
-    └── negatives/                         # the same three tools on the 7,542 host transcripts
+    ├── negatives/                         # the same three tools on the 7,542 host transcripts
+    ├── logs/                              # the two run logs, verbatim, plus the scripts that produced them
+    └── environments/                      # conda env export for the three tool environments
 ```
 
 ## Setup
@@ -122,12 +124,13 @@ Scripts are anchored to the repository root and can be run from anywhere.
 |---|---|---|---|
 | `01_download_genbank.py` | Fetches the 82 viruses from GenBank | `data/amazon_viruses.fasta` | Section 3.1 |
 | `06_download_negatives_v2.py` | Builds the host transcript pool | `data/amazon_negatives_v2.fasta` | Section 3.1 |
-| `11_all_metrics_n20.py` | 20 embedding repetitions: recall, specificity, ROC-AUC, PR-AUC and per-family recall for both models | `results/all_metrics_n20.json` | **Tables 1, 2 and 3** |
+| `11_all_metrics_n20.py` | 20 embedding repetitions: recall, specificity, ROC-AUC, PR-AUC and per-family recall for both models | `results/all_metrics_n20.json` | **Tables 1 and 2**, and the proposed-classifier rows of Table 3 |
 | `12_mcnemar_proposed_vs_external.py` | Paired McNemar, each of the 20 runs against each external tool | `results/mcnemar_proposed_vs_external.json` | Section 4.3 |
 | `07_statistical_tests.py` | Wilson confidence intervals and McNemar among the external tools | `results/statistical_tests.txt` | Section 4.3 |
 | `10_leakage_check.sh` | MMseqs2 search of the 82 viruses against the ZOVER training set | `results/leakage_check/` | Section 3.1 |
 | `05b_embedding_variance_v2.py` | Embedding stochasticity, XGBoost with Word2Vec | `results/embedding_variance_v2.csv` | Section 5 |
 | `05c_embedding_variance_extratrees.py` | Embedding stochasticity, ExtraTrees with fastText | `results/embedding_variance_extratrees.csv` | Section 5 |
+| `13_inference_timing.py` | Inference wall-clock time over the 7,624 sequences, per model | `results/inference_timing.json` | Sections 4.1 and 5 |
 | `08_roc_curve.py` | Illustrative ROC and precision-recall curve, single embedding | `results/roc_pr_curve_illustrative.png` | not in the paper |
 | `02_train_classifiers.py` | Retrains the two classifiers on the 80 % ZOVER pool | `models/*.joblib` | single-run path |
 | `03_predict_amazon.py` | Single-model inference over the 82 viruses | `results/amazon_predictions.csv` | single-run path |
@@ -141,8 +144,10 @@ python3 scripts/07_statistical_tests.py
 It reads the committed raw tool outputs and reprints the external-tool recall,
 specificity and confidence intervals exactly as reported in the paper.
 
-Rebuilding Tables 1 to 3 from scratch retrains 20 embeddings per model and takes
-a few hours on CPU:
+Rebuilding Tables 1 to 3 from scratch retrains 20 embeddings per model. Each
+repetition trains both a Word2Vec and a fastText embedding on the 80 % pool and
+fits both classifiers, which costs about 80 s, so each script takes roughly half
+an hour and the two together about an hour on CPU:
 
 ```bash
 python3 scripts/11_all_metrics_n20.py

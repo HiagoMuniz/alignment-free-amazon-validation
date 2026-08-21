@@ -1,0 +1,37 @@
+Input: /home/carloscalage/mestrado/Mestrado/related_works/eniac_amazon/amazon82.fasta (82 sequencias)
+Cores: 20
+
+=== [1/3] DeepVirFinder ===
+INFO (theano.gof.compilelock): To manually release the lock, delete /home/carloscalage/.theano/compiledir_Linux-6.17--generic-x86_64-with-debian-trixie-sid-x86_64-3.6.15-64/lock_dir
+INFO (theano.gof.compilelock): Waiting for existing lock by process '396828' (I am process '396822')
+INFO (theano.gof.compilelock): To manually release the lock, delete /home/carloscalage/.theano/compiledir_Linux-6.17--generic-x86_64-with-debian-trixie-sid-x86_64-3.6.15-64/lock_dir
+3. Done. Thank you for using DeepVirFinder.
+   output in /home/carloscalage/mestrado/Mestrado/related_works/eniac_amazon/dvf_output/amazon82.fasta_gt1bp_dvfpred.txt
+DVF wall time: 80s
+DVF output: /home/carloscalage/mestrado/Mestrado/related_works/eniac_amazon/dvf_output/amazon82.fasta_gt1bp_dvfpred.txt (82 preds)
+
+=== [2/3] VirSorter2 ===
+                as reliable taxonomy info
+            We recommend this SOP/tutorial for quality control 
+                (make sure to use the lastest version):
+                https://dx.doi.org/10.17504/protocols.io.bwm5pc86
+
+            <====
+            
+[2026-06-20 22:37 INFO] Step 3 - classify finished.
+VS2 wall time: 198s
+VS2 detected: 67 / 82
+
+=== [3/3] geNomad ===
+           amazon82_virus.fna.                                                  
+[22:38:38] Protein sequences were written to amazon82_plasmid_proteins.faa and  
+           amazon82_virus_proteins.faa.                                         
+[22:38:38] Gene annotation data was written to amazon82_plasmid_genes.tsv and   
+           amazon82_virus_genes.tsv.                                            
+[22:38:38] Summary files were written to amazon82_plasmid_summary.tsv and       
+           amazon82_virus_summary.tsv.                                          
+[22:38:38] geNomad summary finished!                                            
+geNomad wall time: 47s
+geNomad detected: 73 / 82
+
+=== Concluido. Outputs em /home/carloscalage/mestrado/Mestrado/related_works/eniac_amazon/{dvf,vs2,genomad}_output ===

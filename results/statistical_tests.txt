@@ -1,8 +1,9 @@
 === RECALL with 95% Wilson CI (n=82 positives) ===
-  DeepVirFinder   : 70/82 = 85.4%  95% CI [76.1%, 91.4%]
-  VirSorter2      : 67/82 = 81.7%  95% CI [72.0%, 88.6%]
-  geNomad         : 73/82 = 89.0%  95% CI [80.4%, 94.1%]
-  XGBoost (20 emb): 81.5% +/- 2.3%  (range 78.0%-85.4%)
+  DeepVirFinder     : 70/82 = 85.4%  95% CI [76.1%, 91.4%]
+  VirSorter2        : 67/82 = 81.7%  95% CI [72.0%, 88.6%]
+  geNomad           : 73/82 = 89.0%  95% CI [80.4%, 94.1%]
+  ExtraTrees (20 emb): 84.6% +/- 1.12 pp
+  XGBoost (20 emb)  : 82.3% +/- 1.25 pp
 
 === Paired McNemar among the reference tools, on the positives ===
   DeepVirFinder vs VirSorter2: discordant DeepVirFinder+:11 VirSorter2+:8  p=0.648  significant=no
@@ -10,7 +11,8 @@
   VirSorter2 vs geNomad: discordant VirSorter2+:0 geNomad+:6  p=0.031  significant=yes
 
 === SPECIFICITY with 95% Wilson CI (n=7,542 host transcripts) ===
-  DeepVirFinder   : 6005/7542 = 79.6%  95% CI [78.7%, 80.5%]  (FP=1537)
-  VirSorter2      : 7329/7542 = 97.2%  95% CI [96.8%, 97.5%]  (FP=213)
-  geNomad         : 7335/7542 = 97.3%  95% CI [96.9%, 97.6%]  (FP=207)
-  XGBoost (20 emb): 87.6% +/- 0.8%
+  DeepVirFinder     : 6005/7542 = 79.6%  95% CI [78.7%, 80.5%]  (FP=1537)
+  VirSorter2        : 7329/7542 = 97.2%  95% CI [96.8%, 97.5%]  (FP=213)
+  geNomad           : 7335/7542 = 97.3%  95% CI [96.9%, 97.6%]  (FP=207)
+  ExtraTrees (20 emb): 88.7% +/- 1.22 pp
+  XGBoost (20 emb)  : 87.8% +/- 0.95 pp

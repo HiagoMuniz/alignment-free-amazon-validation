@@ -2,7 +2,7 @@
 
 | File | Produced by | What it holds |
 |---|---|---|
-| `all_metrics_n20.json` | `11_all_metrics_n20.py` | **Source of Tables 1, 2 and 3.** Recall, specificity, ROC-AUC, PR-AUC and per-family recall for both models, as mean and standard deviation over the same 20 embedding repetitions |
+| `all_metrics_n20.json` | `11_all_metrics_n20.py` | **Source of Tables 1 and 2, and of the two proposed-classifier rows of Table 3.** Recall, specificity, ROC-AUC, PR-AUC and per-family recall for both models, as mean and standard deviation over the same 20 embedding repetitions. The three reference-tool rows of Table 3 come from `../external_tools/` instead, counted from the raw tool outputs |
 | `mcnemar_proposed_vs_external.json` | `12_mcnemar_proposed_vs_external.py` | Paired McNemar of each of the 20 runs of each model against each external tool, over the 82 viral sequences |
 | `statistical_tests.txt` | `07_statistical_tests.py` | Wilson 95 % confidence intervals for recall and specificity of the external tools, and McNemar among them |
 | `external_tools_recall_by_family.csv` | assembled from `external_tools/` | Supplementary: sequences detected per viral family by geNomad, VirSorter2 and DeepVirFinder. Not a table in the paper, but it is the evidence behind the argument in Section 5 that the families the proposed models miss, *Mesoniviridae* above all, are recovered by the homology-based tools, which points at training set coverage rather than at the method. Per-family recall of the proposed models is in `all_metrics_n20.json`, over 20 runs |
@@ -10,6 +10,7 @@
 | `embedding_variance_extratrees.csv` | `05c_embedding_variance_extratrees.py` | The same for ExtraTrees with fastText |
 | `leakage_check/` | `10_leakage_check.sh` | MMseqs2 nucleotide search of the 82 Amazonian viruses against the ZOVER training set |
 | `amazon_predictions.csv`, `amazon_summary.csv` | `03_predict_amazon.py` | Per-sequence probabilities and predictions of the single-run inference path |
+| `inference_timing.json` | `13_inference_timing.py` | Wall-clock inference time over the 7,624 sequences, per model, with model loading timed apart |
 
 ## Why some numbers differ slightly between files
 
